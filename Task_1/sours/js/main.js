@@ -42,6 +42,7 @@ document.querySelector('#round-button').addEventListener('click', () => {
         let seconds = inputValue % 60;
         document.querySelector('#minutes').textContent = minutes.toString().padStart(2, '0');
         document.querySelector('#second').textContent = seconds.toString().padStart(2, '0');
+        secondsInputField.value = '';
 
         if (inputValue) {
             colonBlock.classList.add('--js-active');
@@ -72,7 +73,9 @@ document.querySelector('#round-button').addEventListener('click', () => {
             colonBlock.classList.add('--js-active');
             document.querySelector('#minutes').textContent = inputMinutesValue.toString().padStart(2, '0');
             document.querySelector('#second').textContent = inputSecondsValue.toString().padStart(2, '0');
-            
+            minutesInputField.value = '';
+            secondsInputFieldAlt.value = '';
+
             interval = setInterval(() => {
                 document.body.style.backgroundColor = '#033E8C';
                 if (inputSecondsValue === 0 && inputMinutesValue === 0) {
